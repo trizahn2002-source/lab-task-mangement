@@ -1,4 +1,6 @@
-from task_manager.validation import (validate_task_title)
+from task_manager.validation import (validate_task_title,
+                                      validate_task_description,
+                                      validate_due_date)
 
 tasks = []
 
@@ -26,7 +28,7 @@ def add_task(title, description, due_date):
         "completed": False
     }
     tasks.append(task)
-    print(f"Task '{title.strip()}' added successfully.")
+    print("Task added successfully!")
     return True
 
 
@@ -34,7 +36,7 @@ def mark_task_as_complete(title, tasks=tasks):
     for task in tasks:
         if task["title"].lower() == title.strip().lower():
             task["completed"] = True
-            print(f"Task '{task['title']}' marked as complete.")
+            print("Task marked as complete!")
             return True
     print(f"No task found with title '{title}'.")
     return False
