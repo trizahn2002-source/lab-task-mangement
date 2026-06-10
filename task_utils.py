@@ -1,4 +1,4 @@
-from validation import (validate_task_title,
+from task_manager.validation import (validate_task_title,
                                       validate_task_description,
                                       validate_due_date)
 
