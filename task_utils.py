@@ -46,9 +46,7 @@ def view_pending_tasks(tasks=tasks):
 
 def calculate_progress(tasks=tasks):
     if not tasks:
-        print("No tasks available.")
         return 0
     completed = sum(1 for t in tasks if t["completed"])
     percentage = (completed / len(tasks)) * 100
-    print(percentage)
     return percentage
