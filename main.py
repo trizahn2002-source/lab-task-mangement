@@ -26,8 +26,8 @@ def main():
             add_task(title, description, due_date)
 
         elif choice == "2":
-            title = input("Enter task title to mark complete: ")
-            mark_task_as_complete(title)
+            index = input("Enter task number to mark complete: ")
+            mark_task_as_complete(index)
 
         elif choice == "3":
             view_pending_tasks()

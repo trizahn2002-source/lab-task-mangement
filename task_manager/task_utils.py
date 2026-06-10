@@ -32,14 +32,19 @@ def add_task(title, description, due_date):
     return True
 
 
-def mark_task_as_complete(title, tasks=tasks):
-    for task in tasks:
-        if task["title"].lower() == title.strip().lower():
-            task["completed"] = True
+def mark_task_as_complete(index, tasks=tasks):
+    try:
+        idx = int(index) - 1
+        if 0 <= idx < len(tasks):
+            tasks[idx]["completed"] = True
             print("Task marked as complete!")
             return True
-    print(f"No task found with title '{title}'.")
-    return False
+        else:
+            print("Invalid task number.")
+            return False
+    except ValueError:
+        print("Invalid task number.")
+        return False
 
 
 def view_pending_tasks(tasks=tasks):
